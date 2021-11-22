@@ -5,7 +5,10 @@ export const validate = (key: string, value: string) => {
 
     case 'password':
       console.log(value, value.length > 8);
+      return value.length > 8;
 
+    case 'userName':
+      console.log(value, value.length > 8);
       return value.length > 8;
 
     default:

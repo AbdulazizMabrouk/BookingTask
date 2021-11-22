@@ -1,11 +1,35 @@
 import * as React from 'react';
-import {Text, View, StyleSheet} from 'react-native';
-import {LoginFormTem} from '../../../components/templates';
+import {Text, View, StyleSheet, Dimensions} from 'react-native';
+import {LoginFormTem, SignUpTemp} from '../../../components/templates';
+
+import {TabView, SceneMap, TabBar} from 'react-native-tab-view';
+import {AppLogo} from '../../../components/atoms';
+import {STYLES, COLORS} from '../../../common';
+
+import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 
 interface LoginProps {}
 
 const Login = (props: LoginProps) => {
-  return <LoginFormTem />;
+  const Tab = createMaterialTopTabNavigator();
+
+  return (
+    <>
+      <View style={{...STYLES.center, flex: 0.2}}>
+        <AppLogo />
+      </View>
+
+      <Tab.Navigator
+        screenOptions={{
+          tabBarIndicatorStyle: {
+            backgroundColor: COLORS.Jade,
+          },
+        }}>
+        <Tab.Screen name="Login " component={LoginFormTem} />
+        <Tab.Screen name="Sign Up" component={SignUpTemp} />
+      </Tab.Navigator>
+    </>
+  );
 };
 
 export {Login};

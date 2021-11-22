@@ -21,7 +21,7 @@ const OnboardingTemp = () => {
       </View>
       <Button
         title={'Next'}
-        onPress={() => navigation.navigate('Home')}
+        onPress={() => navigation.navigate('Login')}
         style={styles.button}
       />
       {/* <Text>OnboardingTemp</Text> */}

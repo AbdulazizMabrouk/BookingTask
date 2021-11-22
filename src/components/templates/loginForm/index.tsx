@@ -1,10 +1,11 @@
 import * as React from 'react';
-import {Text, View, StyleSheet} from 'react-native';
+import {Text, View, StyleSheet, ScrollView} from 'react-native';
 import {AppInput} from '../../molecules';
 import {STYLES} from '../../../common';
 import {Button, AppText} from '../../atoms';
 import {calcHeight} from '../../../utils';
 import {validate} from '../../../utils/validator';
+import {useNavigation} from '@react-navigation/core';
 
 interface LoginFormTemProps {}
 
@@ -17,6 +18,7 @@ const LoginFormTem = (props: LoginFormTemProps) => {
     email: '',
     password: '',
   });
+  let navigation = useNavigation();
 
   const [submited, setSubmited] = React.useState(false);
   const onChange = (key: any, value: any) => {
@@ -24,12 +26,16 @@ const LoginFormTem = (props: LoginFormTemProps) => {
   };
   const onSubmit = async () => {
     setSubmited(true);
-    if (validate('email', loginData.email)) {
+    if (
+      validate('email', loginData.email) &&
+      validate('password', loginData.password)
+    ) {
+      navigation.navigate('Home');
     } else {
     }
   };
   return (
-    <>
+    <ScrollView>
       {console.log(loginData)}
       <View style={styles.container}>
         <AppInput
@@ -46,23 +52,29 @@ const LoginFormTem = (props: LoginFormTemProps) => {
           errorMessage={'Invalid password'}
           secureTextEntry
         />
+
         <AppText style={styles.forgotPassword} onPress={() => {}}>
           {'Forgot Password?'}
         </AppText>
+
         <Button
           title={'Login'}
           onPress={() => onSubmit()}
           style={styles.Button}
         />
       </View>
-    </>
+    </ScrollView>
   );
 };
 
 export {LoginFormTem};
 
 const styles = StyleSheet.create({
-  container: {...STYLES.center, marginHorizontal: 16},
+  container: {
+    ...STYLES.center,
+    marginTop: calcHeight(32),
+    marginHorizontal: 16,
+  },
   forgotPassword: {
     alignSelf: 'flex-end',
     marginTop: calcHeight(32),
