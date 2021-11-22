@@ -1,14 +1,27 @@
 import * as React from 'react';
 import {Text, View, StyleSheet} from 'react-native';
-import {STYLES, FONTS} from '../../common';
-import {AppText} from '../../components/atoms';
-
+import {STYLES, FONTS, COLORS} from '../../common';
+import {AppText, Spinner} from '../../components/atoms';
+import {HomeList} from '../../components/templates';
+import {calcHeight} from '../../utils';
+import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 interface HomeProps {}
 
 const Home = (props: HomeProps) => {
+  const Tab = createMaterialTopTabNavigator();
+
   return (
     <View style={styles.container}>
-      <AppText style={styles.title}>Home</AppText>
+      <AppText style={styles.title}>{`Good Morning,\nStephanie!`}</AppText>
+      <Tab.Navigator
+        screenOptions={{
+          tabBarIndicatorStyle: {
+            backgroundColor: COLORS.Jade,
+          },
+        }}>
+        <Tab.Screen name="Recomended" component={HomeList} />
+        <Tab.Screen name="Popular" component={Spinner} />
+      </Tab.Navigator>
     </View>
   );
 };
@@ -16,9 +29,11 @@ const Home = (props: HomeProps) => {
 export {Home};
 
 const styles = StyleSheet.create({
-  container: {},
+  container: {flex: 1, marginHorizontal: 16},
   title: {
     ...FONTS.medium,
-    fontSize: 44,
+    color: COLORS.mineShaft,
+    fontSize: 32,
+    marginTop: calcHeight(60),
   },
 });

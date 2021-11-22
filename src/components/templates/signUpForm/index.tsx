@@ -5,6 +5,7 @@ import {STYLES} from '../../../common';
 import {Button, AppText} from '../../atoms';
 import {calcHeight} from '../../../utils';
 import {validate} from '../../../utils/validator';
+import {useNavigation} from '@react-navigation/core';
 
 interface SignUpTempProps {}
 
@@ -19,6 +20,7 @@ const SignUpTemp = (props: SignUpTempProps) => {
     email: '',
     password: '',
   });
+  let navigation = useNavigation();
 
   const [submited, setSubmited] = React.useState(false);
   const onChange = (key: any, value: any) => {
@@ -26,7 +28,11 @@ const SignUpTemp = (props: SignUpTempProps) => {
   };
   const onSubmit = async () => {
     setSubmited(true);
-    if (validate('email', loginData.email)) {
+    if (
+      validate('email', loginData.email) &&
+      validate('password', loginData.password)
+    ) {
+      navigation.navigate('Home');
     } else {
     }
   };
@@ -36,8 +42,8 @@ const SignUpTemp = (props: SignUpTempProps) => {
         <AppInput
           label={'Username'}
           placeholder={'Create your username'}
-          onChangeText={value => onChange('email', value)}
-          error={!!submited && !validate('email', loginData.email)}
+          onChangeText={value => onChange('userName', value)}
+          error={!!submited && !validate('userName', loginData.userName)}
           errorMessage={'Invalid username'}
         />
         <AppInput

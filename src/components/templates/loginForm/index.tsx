@@ -5,6 +5,7 @@ import {STYLES} from '../../../common';
 import {Button, AppText} from '../../atoms';
 import {calcHeight} from '../../../utils';
 import {validate} from '../../../utils/validator';
+import {useNavigation} from '@react-navigation/core';
 
 interface LoginFormTemProps {}
 
@@ -17,6 +18,7 @@ const LoginFormTem = (props: LoginFormTemProps) => {
     email: '',
     password: '',
   });
+  let navigation = useNavigation();
 
   const [submited, setSubmited] = React.useState(false);
   const onChange = (key: any, value: any) => {
@@ -24,7 +26,11 @@ const LoginFormTem = (props: LoginFormTemProps) => {
   };
   const onSubmit = async () => {
     setSubmited(true);
-    if (validate('email', loginData.email)) {
+    if (
+      validate('email', loginData.email) &&
+      validate('password', loginData.password)
+    ) {
+      navigation.navigate('Home');
     } else {
     }
   };

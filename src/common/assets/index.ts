@@ -3,4 +3,5 @@ export const IMAGES = {
   onBoard: require('./onBoard.png'),
   success: require('./success.png'),
   failed: require('./failed.png'),
+  star: require('./Star.png'),
 };

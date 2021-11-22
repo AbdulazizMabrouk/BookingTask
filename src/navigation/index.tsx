@@ -14,16 +14,31 @@ import {
 const RootStack = createNativeStackNavigator();
 export const RootNavigation = () => {
   return (
-    <RootStack.Navigator screenOptions={{headerShown: false}}>
+    <RootStack.Navigator>
       {/*intro  */}
-      {/* <RootStack.Screen name={'Splash'} component={Splash} /> */}
-      {/* <RootStack.Screen name={'OnBoarding'} component={OnBoarding} /> */}
+      <RootStack.Screen
+        name={'Splash'}
+        component={Splash}
+        options={{headerShown: false}}
+      />
+      <RootStack.Screen
+        name={'OnBoarding'}
+        component={OnBoarding}
+        options={{headerShown: false}}
+      />
       {/* regester */}
-      {/* <RootStack.Screen name={'Login'} component={Login} />
-      <RootStack.Screen name={'SignUp'} component={SignUp} /> */}
+      <RootStack.Screen
+        name={'Login'}
+        component={Login}
+        options={{headerShown: false}}
+      />
 
       {/*common  */}
-      <RootStack.Screen name={'Home'} component={Home} />
+      <RootStack.Screen
+        name={'Home'}
+        component={Home}
+        options={{headerShown: false}}
+      />
       <RootStack.Screen name={'Details'} component={Details} />
       <RootStack.Screen name={'HotelBooking'} component={HotelBooking} />
     </RootStack.Navigator>

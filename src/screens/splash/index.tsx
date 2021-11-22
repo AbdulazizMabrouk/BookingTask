@@ -7,7 +7,7 @@ const Splash = () => {
   let navigation = useNavigation();
   React.useEffect(() => {
     setTimeout(() => {
-      navigation.navigate('SignUp');
+      navigation.navigate('OnBoarding');
     }, 2000);
   }, []);
   return (
