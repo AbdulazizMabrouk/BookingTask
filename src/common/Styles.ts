@@ -21,7 +21,6 @@ export const STYLES = StyleSheet.create({
     paddingHorizontal: calcWidth(20),
   },
   center: {
-    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
   },

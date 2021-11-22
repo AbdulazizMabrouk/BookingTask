@@ -59,7 +59,7 @@ const SignUpTemp = (props: SignUpTempProps) => {
         />
 
         <Button
-          title={'Login'}
+          title={'Sign Up'}
           onPress={() => onSubmit()}
           style={styles.Button}
         />
@@ -71,7 +71,11 @@ const SignUpTemp = (props: SignUpTempProps) => {
 export {SignUpTemp};
 
 const styles = StyleSheet.create({
-  container: {...STYLES.center, marginHorizontal: 16},
+  container: {
+    ...STYLES.center,
+    marginTop: calcHeight(32),
+    marginHorizontal: 16,
+  },
   forgotPassword: {
     alignSelf: 'flex-end',
     marginTop: calcHeight(32),
