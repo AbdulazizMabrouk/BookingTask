@@ -1,11 +1,9 @@
 import * as React from 'react';
-import {Text, View, StyleSheet, Image} from 'react-native';
-import {IMAGES, COLORS, STYLES, onBoarding} from '../../../common';
+import {View, StyleSheet, Image} from 'react-native';
+import {IMAGES, STYLES, onBoarding} from '../../../common';
 import {AppText, Button} from '../../atoms';
 import {useNavigation} from '@react-navigation/core';
 import {calcHeight} from '../../../utils';
-
-interface OnboardingTempProps {}
 
 const OnboardingTemp = () => {
   let navigation = useNavigation();
@@ -24,7 +22,6 @@ const OnboardingTemp = () => {
         onPress={() => navigation.navigate('Login')}
         style={styles.button}
       />
-      {/* <Text>OnboardingTemp</Text> */}
     </View>
   );
 };
@@ -39,9 +36,7 @@ const styles = StyleSheet.create({
     width: '90%',
     borderRadius: 32,
   },
-  image: {
-    // marginTop: calcHeight(32),
-  },
+  image: {},
   textContainer: {
     marginTop: calcHeight(32),
     marginBottom: calcHeight(64),

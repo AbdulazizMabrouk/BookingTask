@@ -1,7 +1,7 @@
 import * as React from 'react';
-import {Text, View, StyleSheet, Image} from 'react-native';
+import { View, StyleSheet, Image} from 'react-native';
 import {STYLES, COLORS, IMAGES, FONTS} from '../../../common';
-import {calcWidth, calcHeight} from '../../../utils';
+import { calcHeight} from '../../../utils';
 import {AppText} from '../../atoms';
 import {Rating} from '../../molecules';
 import {useRoute} from '@react-navigation/core';
@@ -37,13 +37,10 @@ const styles = StyleSheet.create({
   container: {
     ...STYLES.shaddow,
     backgroundColor: COLORS.white,
-    // width: '100%',
-    // height: calcHeight(64),
     padding: 8,
     borderRadius: 12,
     flexDirection: 'row',
     marginTop:calcHeight(32)
-    // alignItems: 'flex-start',
   },
   textcontainer: {marginHorizontal: 8,width:'70%', justifyContent: 'space-between'},
   header: {

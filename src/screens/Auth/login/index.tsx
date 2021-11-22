@@ -1,8 +1,7 @@
 import * as React from 'react';
-import {Text, View, StyleSheet, Dimensions} from 'react-native';
+import {View} from 'react-native';
 import {LoginFormTem, SignUpTemp} from '../../../components/templates';
 
-import {TabView, SceneMap, TabBar} from 'react-native-tab-view';
 import {AppLogo} from '../../../components/atoms';
 import {STYLES, COLORS} from '../../../common';
 

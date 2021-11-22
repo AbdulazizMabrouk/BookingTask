@@ -1,6 +1,5 @@
 import * as React from 'react';
 import {StyleSheet, FlatList} from 'react-native';
-import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 import Geolocation from 'react-native-geolocation-service';
 import {getAllHotels} from '../../../services/getHotels';
 import HotelCard from '../../organisms/HotelCard';
@@ -18,7 +17,6 @@ interface location {
   latitude: number;
   longitude: number;
 }
-//AIzaSyBlqnt1mDHMaglisAdsMaIyR_7HYAYz4Ck/
 let ApiKey = 'AIzaSyDPURyrriG4L45o_JbMBw9A1vwcvSogho8';
 const HomeList = () => {
   const [hotels, setHotels] = React.useState<Array<hotel>>([]);

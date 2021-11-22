@@ -1,13 +1,12 @@
 import * as React from 'react';
 import {
-  Text,
   View,
   StyleSheet,
   ImageBackground,
   TouchableOpacity,
 } from 'react-native';
 import {AppText} from '../../atoms';
-import {STYLES, FONTS, COLORS} from '../../../common';
+import {FONTS, COLORS} from '../../../common';
 import {calcWidth, calcHeight} from '../../../utils';
 import {Rating} from '../../molecules';
 import {useNavigation} from '@react-navigation/core';
@@ -25,7 +24,6 @@ const HotelCard = ({item}: HotelCardProps) => {
   let navigation = useNavigation();
 
   return (
-    // <View style={{flex: 0.5, backgroundColor: 'red'}}>
     <ImageBackground
       style={styles.container}
       imageStyle={{
@@ -64,14 +62,11 @@ export default HotelCard;
 
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
-    // ...STYLES.center,
     width: calcWidth(300),
     marginEnd: calcWidth(16),
     borderRadius: 18,
     height: calcHeight(400),
     marginTop: 32,
-    // flexDirection: 'column',
     justifyContent: 'flex-end',
   },
 });

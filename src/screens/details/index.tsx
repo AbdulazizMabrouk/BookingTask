@@ -1,12 +1,11 @@
 import * as React from 'react';
-import {Text, View, StyleSheet} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 import DetailsCard from '../../components/organisms/DetailsCard';
 import { AppText } from '../../components/atoms';
 import { useNavigation } from '@react-navigation/core';
 
-interface DetailsProps {}
 
-const Details = ({item}) => {
+const Details = ({item}:any) => {
  let navigation= useNavigation();
  React.useLayoutEffect(() => {
     navigation.setOptions({

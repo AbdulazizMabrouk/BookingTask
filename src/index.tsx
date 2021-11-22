@@ -9,7 +9,6 @@
  */
 
 import React from 'react';
-import {View, SafeAreaView} from 'react-native';
 
 import {NavigationContainer} from '@react-navigation/native';
 import {RootNavigation} from './navigation';

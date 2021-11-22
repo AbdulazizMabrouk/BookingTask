@@ -1,6 +1,6 @@
 import * as React from 'react';
-import {Text, View, StyleSheet} from 'react-native';
-import {STYLES, FONTS, COLORS} from '../../common';
+import {View, StyleSheet} from 'react-native';
+import {FONTS, COLORS} from '../../common';
 import {AppText, Spinner} from '../../components/atoms';
 import {HomeList} from '../../components/templates';
 import {calcHeight} from '../../utils';

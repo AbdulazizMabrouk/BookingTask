@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Text, View, StyleSheet, ScrollView} from 'react-native';
+import {View, StyleSheet, ScrollView} from 'react-native';
 import {AppInput} from '../../molecules';
 import {STYLES} from '../../../common';
 import {Button, AppText} from '../../atoms';

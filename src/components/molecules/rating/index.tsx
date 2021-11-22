@@ -1,12 +1,5 @@
 import * as React from 'react';
-import {
-  Text,
-  View,
-  StyleSheet,
-  Image,
-  ViewStyle,
-  TextStyle,
-} from 'react-native';
+import {View, StyleSheet, Image, ViewStyle, TextStyle} from 'react-native';
 import {AppText} from '../../atoms';
 import {IMAGES, COLORS} from '../../../common';
 
