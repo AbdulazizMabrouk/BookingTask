@@ -17,7 +17,7 @@ interface location {
   latitude: number;
   longitude: number;
 }
-let ApiKey = 'AIzaSyDPURyrriG4L45o_JbMBw9A1vwcvSogho8';
+let ApiKey = '';
 const HomeList = () => {
   const [hotels, setHotels] = React.useState<Array<hotel>>([]);
   const [location, setLocation] = React.useState<location>({
